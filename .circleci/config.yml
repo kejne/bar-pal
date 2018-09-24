@@ -14,9 +14,9 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       - image: circleci/mysql:8.0.12
           environment:
-          MYSQL_USER: barpal
-          MYSQL_PASSWORD: barpal
-          MYSQL_DATABASE: barpal
+              MYSQL_USER: barpal
+              MYSQL_PASSWORD: barpal
+              MYSQL_DATABASE: barpal
 
     working_directory: ~/repo
 
