@@ -23,15 +23,15 @@ import se.fehlhaber.barpal.entities.enums.TransactionType;
 @Entity
 public class Transaction {
 
-	static final Transaction createPurchaseTransaction(long creditsDifference, long stockDifference, String productId, String userName) {
+	public static final Transaction createPurchaseTransaction(long creditsDifference, long stockDifference, String productId, String userName) {
 		return new Transaction(TransactionType.PURCHASE,creditsDifference,stockDifference,productId, userName);
 	}
 
-	static final Transaction createReturnTransaction(long creditsDifference, long stockDifference, String productId, String userName) {
+	public static final Transaction createReturnTransaction(long creditsDifference, long stockDifference, String productId, String userName) {
 		return new Transaction(TransactionType.RETURN,creditsDifference,stockDifference,productId, userName);
 	}
 
-	static final Transaction createCreditDepositTransaction(long creditsDifference, String userName) {
+	public static final Transaction createCreditDepositTransaction(long creditsDifference, String userName) {
 		return new Transaction(TransactionType.CREDIT_CHANGE,creditsDifference, userName);
 	}
 
@@ -100,4 +100,9 @@ public class Transaction {
 	public Date getTransactionDate() {
 		return transactionDate;
 	}
+
+	public String getUserName() {
+		return userName;
+	}
+	
 }
