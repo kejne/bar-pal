@@ -2,7 +2,7 @@ package se.fehlhaber.barpal.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
-import se.fehlhaber.barpal.entity.Product;
+import se.fehlhaber.barpal.entities.Product;
 
 /**
  * Simple repository to fetch {@link Product}
