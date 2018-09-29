@@ -1,5 +1,6 @@
 package se.fehlhaber.barpal.entities;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Generated;
@@ -13,9 +14,25 @@ import javax.persistence.Id;
 
 import se.fehlhaber.barpal.entities.enums.Role;
 
+/**
+ * Table to hold user-information as well as credits-balance
+ * 
+ * @author Kaj Fehlhaber
+ *
+ */
 @Entity
 public class User {
 
+	protected User() {
+	}
+	
+	public User(String userName, String passHash, String email) {
+		this.userName = userName;
+		this.passHash = passHash;
+		this.email = email;
+		this.roles = Arrays.asList(Role.USER);
+	}
+	
 	@Id
 	@GeneratedValue
 	private long userKey;
@@ -27,7 +44,7 @@ public class User {
 	private String passHash;
 	
 	@Column
-	private long credits;
+	private long credits = 0;
 	
 	@Column
 	private String email;
