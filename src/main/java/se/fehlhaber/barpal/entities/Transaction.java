@@ -2,6 +2,7 @@ package se.fehlhaber.barpal.entities;
 
 import java.util.Date;
 
+import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -104,5 +105,63 @@ public class Transaction {
 	public String getUserName() {
 		return userName;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (creditsDifference ^ (creditsDifference >>> 32));
+		result = prime * result + ((productId == null) ? 0 : productId.hashCode());
+		result = prime * result + (int) (stockDifference ^ (stockDifference >>> 32));
+		result = prime * result + ((transactionDate == null) ? 0 : transactionDate.hashCode());
+		result = prime * result + (int) (transactionId ^ (transactionId >>> 32));
+		result = prime * result + ((transactionType == null) ? 0 : transactionType.hashCode());
+		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		return result;
+	}
+
+	@Generated(value = {"eclipse"})
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Transaction other = (Transaction) obj;
+		if (creditsDifference != other.creditsDifference)
+			return false;
+		if (productId == null) {
+			if (other.productId != null)
+				return false;
+		} else if (!productId.equals(other.productId))
+			return false;
+		if (stockDifference != other.stockDifference)
+			return false;
+		if (transactionDate == null) {
+			if (other.transactionDate != null)
+				return false;
+		} else if (!transactionDate.equals(other.transactionDate))
+			return false;
+		if (transactionId != other.transactionId)
+			return false;
+		if (transactionType != other.transactionType)
+			return false;
+		if (userName == null) {
+			if (other.userName != null)
+				return false;
+		} else if (!userName.equals(other.userName))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Transaction [transactionId=" + transactionId + ", transactionType=" + transactionType
+				+ ", creditsDifference=" + creditsDifference + ", stockDifference=" + stockDifference + ", productId="
+				+ productId + ", transactionDate=" + transactionDate + ", userName=" + userName + "]";
+	}
+	
 	
 }

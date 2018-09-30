@@ -9,10 +9,7 @@ import se.fehlhaber.barpal.repositories.ProductRepository;
  * @author Kaj Fehlhaber
  *
  */
-public class CheckoutService {
-
-	@Autowired
-	ProductRepository productRepository;
+public interface CheckoutService {
 	
 	
 }
