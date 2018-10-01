@@ -20,9 +20,6 @@ public abstract class AbstractBasicTests {
 	protected static final String USER_HASH = "78676f7687687e68767687a6876876b766545c43433";
 	protected static final String EMAIL = "barpal@fehlhaber.se";
 	
-	protected Product product;
-	protected User user;
-	
 	
 	@Autowired
 	protected UserRepository userRepository;
@@ -34,7 +31,7 @@ public abstract class AbstractBasicTests {
 	protected ProductRepository productRepository;
 	
 	protected User createGenericTestUser() {
-		user = userRepository.findByUserName(USER_NAME);
+		User user = userRepository.findByUserName(USER_NAME);
 		
 		if (user == null) {
 			user = new User(USER_NAME, USER_HASH, EMAIL);			
@@ -44,13 +41,24 @@ public abstract class AbstractBasicTests {
 	}
 	
 	protected Product createGenericTestProduct() {
-		product = productRepository.findByProductName(PRODUCT_NAME);
+		Product product = productRepository.findByProductName(PRODUCT_NAME);
 		
 		if (product == null) {
 			product = new Product(PRODUCT_NAME, PRODUCT_BARCODE, DEFAULT_PRICE);			
 		}
 		
 		return productRepository.save(product);
+	}
+	
+	protected void createNGenericTestProducts(int numberoOfProducts) {
+		for (int i = 0; i< numberoOfProducts; i++) {
+			if (productRepository.findByProductName(PRODUCT_NAME + i) != null) {
+				return;
+			}
+			Product product = new Product(PRODUCT_NAME + i, PRODUCT_BARCODE + i, DEFAULT_PRICE);
+			productRepository.save(product);
+			System.out.println("Creating " + product);
+		}
 	}
 
 }

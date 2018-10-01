@@ -9,19 +9,26 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import se.fehlhaber.barpal.AbstractBasicTests;
+import se.fehlhaber.barpal.entities.Product;
 import se.fehlhaber.barpal.entities.Transaction;
+import se.fehlhaber.barpal.entities.User;
 
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class TransactionServiceTest extends AbstractBasicTests{
 
 	private static final long QUANTITY = 2;
 
 	@Autowired
 	TransactionService testee;
+	
+	protected Product product;
+	protected User user;
 	
 	private Transaction resultingTransaction;
 

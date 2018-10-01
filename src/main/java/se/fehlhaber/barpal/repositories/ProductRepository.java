@@ -12,7 +12,9 @@ import se.fehlhaber.barpal.entities.Product;
  *
  */
 @Service
-public interface ProductRepository extends CrudRepository<Product, Long> {
+public interface ProductRepository extends CrudRepository<Product, String> {
 
 	Product findByProductName(String productName);
+	
+	Product findByBarcode(String barcode);
 }
