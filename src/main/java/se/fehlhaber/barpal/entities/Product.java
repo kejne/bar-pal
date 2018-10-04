@@ -64,6 +64,10 @@ public class Product {
 	public void setQuantity(long quantity) {
 		this.quantity = quantity;
 	}
+	
+	public void addQuantity(long quantityToAdd) {
+		this.quantity+= quantityToAdd;
+	}
 
 	@Override
 	public String toString() {

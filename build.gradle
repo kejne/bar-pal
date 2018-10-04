@@ -39,6 +39,7 @@ dependencies {
 	compile('org.springframework.session:spring-session-core')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('javax.xml.bind:jaxb-api')
+	compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.1'
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('mysql:mysql-connector-java')
 	compileOnly('org.projectlombok:lombok')

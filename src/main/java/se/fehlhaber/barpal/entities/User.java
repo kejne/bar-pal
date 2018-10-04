@@ -96,6 +96,10 @@ public class User {
 	public long getUserKey() {
 		return userKey;
 	}
+	
+	public void addCredits(long creditsToAdd) {
+		this.credits += creditsToAdd;
+	}
 
 	@Override
 	public int hashCode() {
