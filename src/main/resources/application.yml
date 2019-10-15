@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost/barpal"
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+
+    username: "barpal"
+    password: "barpal"
+
+  jpa:
+    hibernate:
+      ddl-auto: "create-drop"

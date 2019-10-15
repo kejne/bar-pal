@@ -23,8 +23,11 @@ public class Product {
 		this.barcode = barcode;
 		this.credits = credits;
 	}
-	
+
 	@Id
+	@GeneratedValue
+	private long id;
+
 	@Column
 	private String productName;
 	
@@ -111,6 +114,9 @@ public class Product {
 			return false;
 		return true;
 	}
-	
-	
+
+
+	public long getId() {
+		return id;
+	}
 }

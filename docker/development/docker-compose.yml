@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+
+  barpaldb:
+    image: "mysql:8.0.17"
+
+    environment:
+      MYSQL_ROOT_PASSWORD: barpal
+      MYSQL_DATABASE: barpal
+      MYSQL_USER: barpal
+      MYSQL_PASSWORD: barpal
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - barpaldb-dev-data:/var/lib/mysql
+
+volumes:
+  barpaldb-dev-data:
+
