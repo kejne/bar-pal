@@ -6,6 +6,8 @@ public class CheckoutCart {
 
 	private List<CartEntry> entries;
 
+	protected CheckoutCart() {}
+
 	public CheckoutCart(List<CartEntry> cartEntries) {
 		this.entries = cartEntries;
 	}
