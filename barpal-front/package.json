@@ -1,0 +1,19 @@
+{
+  "name": "barpal-front",
+  "version": "1.0.0",
+  "description": "Frontend component for the BarPal system",
+  "main": "index.js",
+  "repository": "https://github.com:kejne/bar-pal",
+  "author": "Kaj Fehlhaber",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^9.1.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
